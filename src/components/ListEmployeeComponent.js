@@ -4,17 +4,31 @@ import {Link} from 'react-router-dom'
 
 const ListEmployeeComponent = () => {
 
+    
+
     const [employees, setEmployees] = useState([])
 
     useEffect(() => {
+       getAllEmployees();
+        
+    }, [])
+
+    const getAllEmployees = () => {
         EmployeeService.getAllEmployees().then((response) => {
             setEmployees(response.data)
             console.log(response.data)
         }).catch(error => {
             console.log(error);
         })
-        
-    }, [])
+    }
+
+    const  deleteEmoloyeeHandler=(employeeId) => {
+        EmployeeService.deleteEmployee(employeeId).then((response) => {
+            getAllEmployees();
+        }).catch(error => {
+            console.log(error);
+        })
+    }
 
     return (
         <div className="container">
@@ -27,6 +41,8 @@ const ListEmployeeComponent = () => {
                      <th>Employee Last Name</th>
                     <th>Employee Email Id</th>
                     <th>Employee User Name</th>
+                    <th>Actions</th>
+                   
                 </thead>
                 <tbody>
                     {
@@ -38,6 +54,11 @@ const ListEmployeeComponent = () => {
                                 <td>{employee.lastName}</td>
                                 <td>{employee.emailId}</td>
                                 <td>{employee.userName}</td>
+                                <td>
+                                    <Link className="btn btn-primary" to={`/edit-employee/${employee.id}`}>Update</Link>
+                                    <button className="btn btn-danger m-2" onClick={()=>deleteEmoloyeeHandler(employee.id)}>Delete</button>
+                                </td>
+                                
                             </tr>
                         )
                     }
@@ -48,4 +69,3 @@ const ListEmployeeComponent = () => {
 }
 
 export default ListEmployeeComponent
-
