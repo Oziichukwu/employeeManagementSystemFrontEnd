@@ -4,9 +4,8 @@ import {Link} from 'react-router-dom'
 
 const ListEmployeeComponent = () => {
 
-    
-
     const [employees, setEmployees] = useState([])
+
 
     useEffect(() => {
        getAllEmployees();
@@ -38,11 +37,10 @@ const ListEmployeeComponent = () => {
                 <thead>
                     <th>Employee Id</th>
                     <th>Employee First Name</th>
-                     <th>Employee Last Name</th>
+                    <th>Employee Last Name</th>
                     <th>Employee Email Id</th>
                     <th>Employee User Name</th>
                     <th>Actions</th>
-                   
                 </thead>
                 <tbody>
                     {
