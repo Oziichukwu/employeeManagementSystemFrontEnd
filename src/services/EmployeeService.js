@@ -3,8 +3,8 @@ import axios from "axios";
 
 const DELETE_EMPLOYEE_BASE_REST_API = "http://localhost:8080/api/v1/employee"
 const GET_EMPLOYEE_BASE_REST_API_URL = "http://localhost:8080/api/v1/employee"
-const EMPLOYEE_BASE_REST_API_URL = "http://localhost:8080/api/v1/employee";
-const CREATE_EMPLOYEE_BASE_REST_API_URL = "http://localhost:8080/api/v1/employee/create_employee";
+const EMPLOYEE_BASE_REST_API_URL = "http://localhost:8080/api/v1/employee"
+const CREATE_EMPLOYEE_BASE_REST_API_URL = "http://localhost:8080/api/v1/employee"
 const UPDATE_EMPLOYEE_BASE_REST_API_URL = "http://localhost:8080/api/v1/employee"
 
 

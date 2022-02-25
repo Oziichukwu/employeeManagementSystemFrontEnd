@@ -18,12 +18,8 @@ const AddEmployee = ({history, match}) => {
         
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault()
-    }
-
-
     const saveOrUpdateEmployeehandler = (e)=> {
+
         e.preventDefault()
         
         const employee = {firstName , lastName, emailId, userName}
@@ -39,11 +35,13 @@ const AddEmployee = ({history, match}) => {
 
         }else {
             EmployeeService.createEmployee(employee).then((response)=>{
+
                 console.log(response.data)
+
                 history.push("/employees")
     
-            }).catch((err) => {
-                console.log(err)
+            }).catch((error) => {
+                console.log(error)
             })
         }
     }
@@ -64,7 +62,6 @@ const AddEmployee = ({history, match}) => {
             return <h2 className="text-center">Update Employee</h2>
         }else{
             return <h2 className="text-center">Add Employee</h2>
-
         }
     }
 
@@ -75,7 +72,7 @@ const AddEmployee = ({history, match}) => {
                <div className="card col-md-6 offset-md-3 offset-md-3">
                     {label()}
                     <div className="card-body">
-                        <form onSubmit={(e)=>handleSubmit(e)}>
+                        <form onSubmit>
                             <div className="form-group mb-2">
                                 <label className="form-label">First Name:</label>
                                 <input type="text" placeholder="Enter First Name"
