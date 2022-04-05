@@ -6,15 +6,16 @@ import FooterComponent from './components/footerComponent'
 import './App.css';
 
 
-function App() {
+function App() { 
   return (
     <div>
       
         <HeaderComponent/>
         <div className="container">
           <Switch>
+            
             <Route exact path = "/" component = {ListEmployeeComponent}/>
-            <Route path = "/employees" component = {ListEmployeeComponent}/>
+            <Route exact path = "/employees" component = {ListEmployeeComponent}/>
             <Route path = "/add-employee" component = {AddEmployee}/>
             <Route path = "/edit-employee/:id" component = {AddEmployee}/>
           </Switch>

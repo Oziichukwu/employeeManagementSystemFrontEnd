@@ -27,18 +27,16 @@ const AddEmployee = ({history, match}) => {
         if (match.params.id){
             EmployeeService.updateEmployee(match.params.id, employee).then((response) => {
 
-                history.push("/employees")
+                history.push("/")
 
             }).catch((err) => {
                 console.error(err)
             })
 
-        }else {
+        }else{
             EmployeeService.createEmployee(employee).then((response)=>{
 
-                console.log(response.data)
-
-                history.push("/employees")
+                history.push("/")
     
             }).catch((error) => {
                 console.log(error)
@@ -82,6 +80,7 @@ const AddEmployee = ({history, match}) => {
                                 onChange={(e)=>setFirstName(e.target.value)}
                                 />
                             </div>
+                            
                             <div className="form-group mb-2">
                                 <label className="form-label">Last Name:</label>
                                 <input type="text" placeholder="Enter Last Name"
