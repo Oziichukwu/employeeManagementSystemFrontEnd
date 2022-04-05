@@ -1,11 +1,11 @@
 import axios from "axios";
 
 
-const DELETE_EMPLOYEE_BASE_REST_API = "http://localhost:8080/api/v1/employee"
-const GET_EMPLOYEE_BASE_REST_API_URL = "http://localhost:8080/api/v1/employee"
-const EMPLOYEE_BASE_REST_API_URL = "http://localhost:8080/api/v1/employee"
-const CREATE_EMPLOYEE_BASE_REST_API_URL = "http://localhost:8080/api/v1/employee"
-const UPDATE_EMPLOYEE_BASE_REST_API_URL = "http://localhost:8080/api/v1/employee"
+const DELETE_EMPLOYEE_BASE_REST_API = "https://employee-recording-system.herokuapp.com/employee"
+const GET_EMPLOYEE_BASE_REST_API_URL = "https://employee-recording-system.herokuapp.com/employee"
+const EMPLOYEE_BASE_REST_API_URL = "https://employee-recording-system.herokuapp.com/employee"
+const CREATE_EMPLOYEE_BASE_REST_API_URL = "https://employee-recording-system.herokuapp.com/employee"
+const UPDATE_EMPLOYEE_BASE_REST_API_URL = "https://employee-recording-system.herokuapp.com/employee"
 
 
 class EmployeeService {
